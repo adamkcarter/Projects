@@ -1,0 +1,134 @@
+***************|| Sushi Bot - Conceptualization ||***********
+
+	Modules 
+
+- ImageGrab
+- os
+- time
+- win32api
+- win32con
+- ImageOps
+- numpy
+
+	Functions used from Modules
+
+	ImageGrab
+
+ImageGrab.grab(w,x,y,z)
+
+- This function uses two x,y co-ordinates which are pixel locations to grab a snapshot of your desktop.
+
+	os
+
+os.getcwd()
+
+- This function determines the directory from which your code is running. This is a time saver more than anything, the bot could be created and ran without it.
+
+	time
+
+time.time()
+
+- this function will return a timestamp, this is useful when saving the images grabed using the function mentioned above.
+
+time.sleep(x)
+
+- this function will pause the program for x seconds, it's useful for both the functioning of the bot and for debugging purposes. At times, a web page will take some time to load or complete an action. time.sleep is most useful in these situations.
+
+	win32api and win32con
+
+win32api.mouse_event(win32con.MOUSEEVENT_LEFTDOWN,0,0)
+win32api.mouse_event(win32con.MOUSEEVENT_LEFTUP,0,0)
+
+- these functions above when fired one afte the other simulate the left click of a mouse.
+
+win32api.SetCursorPos(x)
+
+- This function will allow the program to move your cursor to a desired position, x in this case is an ordered pair of co-ordinates
+
+win32api.GetCursorPos()
+
+- This function returns two numbers, x and y, which corespond to the current location of your cursor on the screen
+
+	ImageOps
+
+ImageOps.grayscale(x)
+
+- this function with take a screenshot x and decolourize it. Assuming the screenshot x displays pixels in colour they have an associated value to Red, Blue and Green. Using ImageOps.grayscale(x) will convert each pixel from having three values to only one. Using the numpy module these values can be placed into an array and summed. This is useful in picture recognition.
+
+	numpy
+
+array() 
+
+***************|| Making Use of the Modules ||****************
+
+This bot wouldn't have been possible without allowing the program to take control of our mouse. Without a doubt both modules win32api and win32con allowed us to acheive this.
+
+In addition to taking control, they allowed us to save an enormous amount of time in gathering coordinates or our game. 
+
+def getCords():
+	x,y = win32.api.GetCursorPos()
+	print x,y
+
+This simple function, when called, will print the current location of your cursor. A task which otherwise would involve taking a picture or your screen and manually counting or determining the location of your desired pixel.
+
+Once we have our desired co-ordinates, what can we do with them?
+
+def mousePos(Cord):
+	win32api.SetCursorPos(Cord)
+
+def leftClick():
+	win32api.mouse_event(win32con.MOUSEEVENT_LEFTDOWN,0,0)
+	time.sleep(.1)
+	win32api.mouse_event(win32con.MOUSEEVENT_LEFTUP,0,0)
+
+using these two functions allows us to position the mouse over a specific pixel and left click that place. If you haven't guessed, mousePos will accept an ordered pair (x,y), then win32api.SetCursorPos will direct your cursor to those exact co-ordinates. leftClick has no parameters but simply makes use of two mouse events, pressing your left button down and releasing it. These two functions really make the bot run.
+
+Another critical piece of our bot it allowing it to make decisions based off of different game states. To do this we used a method of 'giving the computer eyes' so it can 'see' the game in it's current state.
+
+def screenGrab():
+	box = (w,x,y,z)
+	im = ImageGrab.grab(box)
+	return im
+
+this function simply takes a screenshot based off of two x,y co-ordinates and returns that image.
+
+def grayScale():
+	im = ImageOps.grayscale(ImageGrab.grab(w,x,y,z))
+	a = numpy.array(im.getcolors())
+	a = a.sum()
+	return a
+
+This function is primarily used for picture recognition. ImageGrab.grab(w,x,y,z) will grab an image from on your desktop from both x,y co-ordinates given. Then ImageOps.grayscale(...) will convert the coloured picture taken with grab() and change each pixel to a number on the gray scale. numpy.array(im.getcolors()) orders all the gray scale values into a vector and a.sum() adds all these values up. Phewf, that was a lot, but this is truely integral to our bot. This function allows the bot to take a snap shot of anything on your screen and convert that picture to a number. What a great idea, take a picture and assign a number to it based on where the decolorized pixels land on a gray scale. This will allow the bot to determine whether the snap shot taken is recognized or not. If it converts the picture to a known number, then we can allow the bot to make a decision on this fact. Amazing.
+
+***********|| Focusing on the Game Mechanics ||*************
+
+For those following along at home, we've created a bot to play a sushi creating game. Here are the games mechanics
+
+- Customers arrive and display a picture of their desired sushi
+- Chef (that's you) assesses your ingredients and purchases more to fufill his customers needs, or makes the sushi.
+- We need to clean up after our customers when they've finished
+
+So what should our bot care about? Certainly we want to create the correct product for the customer. We want to make sure we're well stocked to fufill our greedy customers and of course, we want to clean up after our guests.
+
+************|| Creating the Correct Product ||*************
+
+As stated above, the game has customers arrive and blurt out their desired sushi but showing displaying a picture of their desired sushi choice while ensuring we have enough product to fufill the request. From this simple task we need to code the following:
+
+- Bot recognition there is a customer waiting
+- Bot creating the desired choice of our customer
+- Bot ensuring we have enough ingredients
+
+Let's start by telling the bot what type of sushi our customer wants. This is easy provided we've created the functions above, all we have to do is us the grayScale() function to get a number which is associated to desired sushi. The first step is determining the unique number for each sushi and ensuring that this number is consitant between all possible customers (to make things easier for you).
+
+The best way to keep track of this is by creating a dictionary to store these values
+
+sushiTypes = {
+	2989: 'caliroll'
+	2516: 'onigiri'
+	2523: 'gunkan'
+}
+
+Now we can get the string 'caliroll' by using the following syntax 
+
+sushiTypes[2989]
+
