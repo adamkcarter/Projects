@@ -15,8 +15,6 @@ upperBound = 40
 
 user = raw_input("\n\nDo you have a user name?\n\n>> ")
 
-
-
 if user == 'y':
 	while True:
 		print '\nPlease type the number associated to your Username\n'
