@@ -4,14 +4,12 @@ def getNumberOfUsers():
 	return (len(lst)-1)
 	w.close()
 
-def signUp():
-		name = raw_input("\n\nOkay, let's get started by getting your name.\n>> ")
+def signUp(user):
+	#This function will take a user name and write it to the file USER_NAMES
 		noUsers = getNumberOfUsers()
 		w = open('USER_NAMES','a')
-		w.write(str(noUsers+1) + '. ' + name+'\n')
+		w.write(str(noUsers+1) + '. ' + user+'\n')
 		w.close()
-		print "\n\nGreat, here is your User Name: "+str(name)+". You are user number " + str(noUsers+1) + " Thank you for signing up\n"
-		return name
 
 def findUser(x):
 	w = open('USER_NAMES')
@@ -27,11 +25,12 @@ def findUser(x):
 			char = w.read(1)
 	w.close()
 
-def keepScore(name,time,percent):
+def keepScore(name,time,percent, subject):
 	w = open('SCORE_BOARD','a')
 	lenName = len(name)
 	lenTime = len(str(time))
 	lenPercent = len(str(percent))
+	lenSubject = len(subject)
 
 	w.write(str(name)+',')
 	for i in range(20-(lenName+1)):
@@ -45,5 +44,21 @@ def keepScore(name,time,percent):
 	for i in range(20-(lenPercent+1)):
 		w.write(' ')
 
+	w.write(subject + ',')
+
 	w.write('\n')
 	w.close()
+
+def userUnique(x):
+	w = open('USER_NAMES')
+	lst = w.readlines()
+	w.close()
+	lst2 = []
+
+	for i in lst:
+		lst2.append(i.count(x))
+
+	if sum(lst2) > 0:
+		return False
+	else:
+		return True
