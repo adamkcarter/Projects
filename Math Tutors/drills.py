@@ -11,13 +11,13 @@ from time import *
 def Multiplication(user):
 	lowerBound = 10
 	upperBound = 40
-	subject = 'Muliplication'
+	subject = 'Multiplication'
 
 	print "\n\nHello %s,\nWe're going to do some multiplication drills! Get ready!\n" % (user)
 	print '\nYou will be given two numbers between %d and %d, good luck!' % (lowerBound, upperBound)
 	print '\n\nDon\'t forget it\'s timed!\n'
 
-	sleep(10)
+	sleep(3)
 	print '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReady\n\n\n\n\n'
 	sleep(1)
 	print '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSet\n\n\n\n\n'
@@ -48,7 +48,7 @@ def Multiplication(user):
 	elapsed=lst[1]-lst[0]
 	percent = float(int((float(score)/3)*10000))/100
 	print "\n\nWow! you scored " + str(float(percent)) + " percent congrats!!!\n" 
-	sleep(10)
+	sleep(3)
 	u.keepScore(user,elapsed,percent,subject)
 
 def Addition(user):
@@ -60,7 +60,7 @@ def Addition(user):
 	print '\nYou will be given two numbers between %d and %d, good luck!' % (lowerBound, upperBound)
 	print '\n\nDon\'t forget it\'s timed!'
 
-	sleep(10)
+	sleep(3)
 	print '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReady\n\n\n\n\n'
 	sleep(1)
 	print '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSet\n\n\n\n\n'
@@ -80,7 +80,7 @@ def Addition(user):
 		var2 = random.randint(lowerBound, upperBound)
 		var3 = var1 + var2
 		var4 = raw_input("\nWhat is " + str(var1) + " plus " +str(var2)+" ?\n      \n>> ")	
-		if (float(var3) == float(var4)):
+		if (str(var3) == var4):
 			print "\nThat'a boy!\n"
 			score += 1
 		else:
@@ -92,7 +92,7 @@ def Addition(user):
 	elapsed=lst[1]-lst[0]
 	percent = float(int((float(score)/3)*10000))/100
 	print "\n\nWow! you scored " + str(float(percent)) + " percent congrats!!!\n" 
-	sleep(10)
+	sleep(3)
 	u.keepScore(user,elapsed,percent,subject)
 
 def Subtraction(user):
@@ -104,7 +104,7 @@ def Subtraction(user):
 	print '\nYou will be given two numbers between %d and %d, good luck!' % (lowerBound, upperBound)
 	print '\n\nDon\'t forget it\'s timed!'
 
-	sleep(10)
+	sleep(3)
 	print '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReady\n\n\n\n\n'
 	sleep(1)
 	print '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSet\n\n\n\n\n'
@@ -115,8 +115,8 @@ def Subtraction(user):
 
 	#Defining both score and lst to keep track of time elapsed and the percentage of correct responses.
 
-	lst = [0,0]
-	lst[0]= time()
+	times = [0,0]
+	times[0]= time()
 	score = 0
 
 	for i in range(3):
@@ -135,9 +135,9 @@ def Subtraction(user):
 				print '\n\nSorry, that\'s wrong. The answer was '+str(var3) +' Better luck next time.\n'
 			else:
 				print "\n\nOh, too bad, the answer is \n\n" + str(var3) + "\n\nlet's try again\n\n"
-	lst[1] = time()
-	elapsed=lst[1]-lst[0]
+	times[1] = time()
+	elapsed=times[1]-times[0]
 	percent = float(int((float(score)/3)*10000))/100
 	print "\n\nWow! you scored " + str(float(percent)) + " percent congrats!!!\n" 
-	sleep(10)
+	sleep(3)
 	u.keepScore(user,elapsed,percent,subject)
