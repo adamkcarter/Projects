@@ -1,43 +1,15 @@
-import MySQLdb
-
 def getNumberOfUsers():
 	w = open('USER_NAMES')
 	lst = w.readlines()
 	return (len(lst)-1)
 	w.close()
 
-def uniqueUser(user):
-	db = MySQLdb.connect(host='localhost',
-						user = 'root',
-						passwd='root',
-						db = 'mathTutors')
-	cur=db.cursor()
-
-	sqlStatement = 'SELECT * FROM users'
-
-	cur.execute(sqlStatement)
-
-	usernames = cur.fetchall()
-
-	for row in usernames:
-		if user == row[0]:
-			return False
-
-	return True
-
 def signUp(user):
 	#This function will take a user name and write it to the file USER_NAMES
-	db = MySQLdb.connect(host='localhost',user='root',passwd='root',db='mathTutors')
-
-	cur = db.cursor()
-
-	sqlStatement = 'INSERT INTO users (username) VALUES ("%s")' % (user)
-
-	cur.execute(sqlStatement)
-	db.commit()
-	print 'Thank you for signing up'
-
-
+		noUsers = getNumberOfUsers()
+		w = open('USER_NAMES','a')
+		w.write(str(noUsers+1) + '. ' + user+'\n')
+		w.close()
 
 def findUser(x):
 	w = open('USER_NAMES')

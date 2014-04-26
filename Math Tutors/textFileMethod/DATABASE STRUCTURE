@@ -1,0 +1,20 @@
+DATABASE STRUCTURE
+
+DATABASE NAME: mathTutors
+
+Two Tables,
+
+
+	users
+
+username, Varchar(30)
+
+
+
+
+	Score
+username, Varchar(30)
+subject, Varchar(30)
+timeTaken, float
+percent, float
+
