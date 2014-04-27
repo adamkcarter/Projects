@@ -1,92 +1,106 @@
 import MySQLdb
-
+import database as d
+#Accepts no parameter, returns the number of users that exist in the 'users' DB
 def getNumberOfUsers():
-	w = open('USER_NAMES')
-	lst = w.readlines()
-	return (len(lst)-1)
-	w.close()
+	db = d.connect()
 
-def uniqueUser(user):
-	db = MySQLdb.connect(host='localhost',
-						user = 'root',
-						passwd='root',
-						db = 'mathTutors')
+	cur = db.cursor()
+
+	lookUpStatment = 'SELECT count(username) from users'
+
+	cur.execute(lookUpStatment)
+
+	return cur.fetchall()[0][0]
+
+	cur.close()
+	db.close()
+
+#Will check the given username for it's existance in the database: mathTutors, this function returns true if the name is unique and flase otherwise.
+def uniqueUser(username):
+	db = d.connect()
+
 	cur=db.cursor()
 
-	sqlStatement = 'SELECT * FROM users'
+	lookUpStatement = 'SELECT username FROM users'
 
-	cur.execute(sqlStatement)
+	cur.execute(lookUpStatement)
 
 	usernames = cur.fetchall()
 
 	for row in usernames:
-		if user == row[0]:
+		if username == row[0]:
 			return False
 
 	return True
 
-def signUp(user):
-	#This function will take a user name and write it to the file USER_NAMES
-	db = MySQLdb.connect(host='localhost',user='root',passwd='root',db='mathTutors')
+	cur.close()
+	db.close()
+
+
+#Will insert the given username into the 'users' DB. Returns True
+def signUp(username):
+	#This function will take a user name and insert it into the user database in mathTutors
+	db = d.connect()
 
 	cur = db.cursor()
 
-	sqlStatement = 'INSERT INTO users (username) VALUES ("%s")' % (user)
+	lookUpStatement = 'Select max(userNo) from users'
+
+	cur.execute(lookUpStatement)
+	number = cur.fetchall()[0][0]
+
+	if number == None:
+		number = 1
+	else: 
+		number += 1
+
+	sqlStatement = 'INSERT INTO users (username, userNo) VALUES ("%s", %d)' % (username, number)
 
 	cur.execute(sqlStatement)
 	db.commit()
-	print 'Thank you for signing up'
 
+	cur.close()
+	db.close()
+	return True
 
+#Accepts a number as input and returns the name of the user associated to that number
+def findUser(userNo):
+	db = d.connect()
 
-def findUser(x):
-	w = open('USER_NAMES')
-	char = w.read(1)
-	while char != '':
-		if char == str(x):
-			w.seek(2,1)
-			lst = w.readline()
-			leng = len(lst)
-			return lst[0:(leng-1)]
-			w.close()
-		else:
-			char = w.read(1)
-	w.close()
+	cur = db.cursor()
 
-def keepScore(name,time,percent, subject):
-	w = open('SCORE_BOARD','a')
-	lenName = len(name)
-	lenTime = len(str(time))
-	lenPercent = len(str(percent))
-	lenSubject = len(subject)
+	lookUpStatement= 'SELECT username from users where userNo = %d' % (userNo)
 
-	w.write(str(name)+',')
-	for i in range(20-(lenName+1)):
-		w.write(' ')
+	cur.execute(lookUpStatement)
 
-	w.write(str(time)+',')
-	for i in range(20-(lenTime+1)):
-		w.write(' ')
+	return cur.fetchall()[0][0]
 
-	w.write(str(percent)+',')
-	for i in range(20-(lenPercent+1)):
-		w.write(' ')
+	cur.close()
+	db.close()
 
-	w.write(subject + ',')
+#Accepts, username, subject, timeTaken and percent inserting all into the 'score' DB. Returns True
+def keepScore(username,subject,timeTaken, percent): #CHANGED THE ARGUMENT ORDER
+	db = d.connect()
 
-	w.write('\n')
-	w.close()
+	cur = db.cursor()
 
-def userUnique(x):
-	w = open('USER_NAMES')
-	lst = w.readlines()
-	w.close()
-	lst2 = []
+	####Find the user's number
+	lookUpStatement = 'SELECT userNo from users where username = "%s"' % (username) 
 
-	for i in lst:
-		lst2.append(i.count(x))
+	cur.execute(lookUpStatement)
 
-	if sum(lst2) > 0:
-		return False
-	else:
-		return True
+	userNo = cur.fetchall()[0][0]
+	
+	###Insert the score and commit the transaction 
+	insertStatement = 'INSERT INTO score (username, subject, timeTaken, percent, userNo) VALUES ("%s", "%s", %f, %f, %3.d)' % (username, subject, timeTaken, percent, userNo)
+
+	###print '("%s", "%s", %f, %f, %d)' % (username, subject, timeTaken, percent, userNo) #DEBUGGING
+
+	cur.execute(insertStatement)
+	db.commit()
+
+	#print 'yes' #DEBUGGING
+
+	cur.close()
+	db.close()
+	return True

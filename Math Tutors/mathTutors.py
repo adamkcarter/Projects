@@ -2,10 +2,16 @@
 
 # cd desktop/coding/projects/'math tutors'
 
+'''''''''''''''''''''''''''''''''''''''
+This is where the program comes to life.
+'''''''''''''''''''''''''''''''''''''''
+
+
 import user as u
 import time
-import drills as d
+import drills
 import stats as s
+import database as d
 
 def title():
 	print "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n***********************************************\n	Welcome To Math Tutors! \n***********************************************\n\n"
@@ -28,11 +34,26 @@ def gettingStarted():
 		
 		print "Please type the number next to your user name.\n\n"
 		
-		w = open('USER_NAMES')
-		print w.read() +'\n\n'
-		w.close()
+		db = d.connect()
+		cur = db.cursor()
 
-		userNumber = (raw_input('>> '))
+		lookUpStatement = 'SELECT * FROM users'
+
+		cur.execute(lookUpStatement)
+
+		results = cur.fetchall()
+
+		for i in results:
+			if (i[1]>9):
+				print str(i[1]) + ' ' + str(i[0])
+			else:
+				print str(i[1]) + '  ' + str(i[0])
+
+		cur.close()
+		db.close()
+
+
+		userNumber = int((raw_input('>> ')))
 		
 		title()
 		
@@ -52,7 +73,7 @@ def gettingStarted():
 			print 'Please enter your desired username!'	
 
 			user = raw_input('\n\n>> ')
-			if (not u.userUnique(user)):
+			if (not u.uniqueUser(user)):
 				title()
 				print 'I\'m sorry, that username is taken. Please try a new name'
 				time.sleep(2)
@@ -86,13 +107,13 @@ def start(user):
 				response = raw_input('\n\n\n\n>> ')
 
 				if response == '1':
-					d.Addition(user)
+					drills.Addition(user)
 					break;
 				elif response == '2':
-					d.Subtraction(user)
+					drills.Subtraction(user)
 					break;
 				elif response == '3':
-					d.Multiplication(user)
+					drills.Multiplication(user)
 					break;
 				elif response == '4':
 					break;

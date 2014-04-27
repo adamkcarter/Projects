@@ -1,10 +1,9 @@
 import MySQLdb
 
-def connect(database):
+def connect():
 	db = MySQLdb.connect(host='localhost',
 						user = 'root',
 						passwd='root',
-						db = database)
-	cur=db.cusor()
+						db = 'mathTutors')
 
-	return cur
+	return db

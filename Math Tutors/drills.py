@@ -25,7 +25,7 @@ def Multiplication(user):
 	print '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGO!!\n\n\n\n\n'
 	sleep(1)
 	print '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
-	#Defining both score and lst to keep track of time elapsed and the percentage of correct responses.
+	#Defining both score and lst to keep track of time timeTaken and the percentage of correct responses.
 
 	lst = [0,0]
 	lst[0]= time()
@@ -45,11 +45,11 @@ def Multiplication(user):
 			else:
 				print "\n\nOh, too bad, the answer is \n\n" + str(var3) + "\n\nlet's try again\n\n"
 	lst[1] = time()
-	elapsed=lst[1]-lst[0]
+	timeTaken=lst[1]-lst[0]
 	percent = float(int((float(score)/3)*10000))/100
 	print "\n\nWow! you scored " + str(float(percent)) + " percent congrats!!!\n" 
 	sleep(3)
-	u.keepScore(user,elapsed,percent,subject)
+	u.keepScore(user,subject,timeTaken,percent)
 
 def Addition(user):
 	lowerBound = 1000
@@ -69,7 +69,7 @@ def Addition(user):
 	sleep(1)
 	print '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
 
-	#Defining both score and lst to keep track of time elapsed and the percentage of correct responses.
+	#Defining both score and lst to keep track of time timeTaken and the percentage of correct responses.
 
 	lst = [0,0]
 	lst[0]= time()
@@ -89,11 +89,11 @@ def Addition(user):
 			else:
 				print "\n\nOh, too bad, the answer is \n\n" + str(var3) + "\n\nlet's try again\n\n"
 	lst[1] = time()
-	elapsed=lst[1]-lst[0]
+	timeTaken=lst[1]-lst[0]
 	percent = float(int((float(score)/3)*10000))/100
 	print "\n\nWow! you scored " + str(float(percent)) + " percent congrats!!!\n" 
 	sleep(3)
-	u.keepScore(user,elapsed,percent,subject)
+	u.keepScore(user,subject,timeTaken,percent)
 
 def Subtraction(user):
 	lowerBound = 1000
@@ -113,7 +113,7 @@ def Subtraction(user):
 	sleep(1)
 	print '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
 
-	#Defining both score and lst to keep track of time elapsed and the percentage of correct responses.
+	#Defining both score and lst to keep track of time timeTaken and the percentage of correct responses.
 
 	times = [0,0]
 	times[0]= time()
@@ -136,8 +136,8 @@ def Subtraction(user):
 			else:
 				print "\n\nOh, too bad, the answer is \n\n" + str(var3) + "\n\nlet's try again\n\n"
 	times[1] = time()
-	elapsed=times[1]-times[0]
+	timeTaken=times[1]-times[0]
 	percent = float(int((float(score)/3)*10000))/100
 	print "\n\nWow! you scored " + str(float(percent)) + " percent congrats!!!\n" 
 	sleep(3)
-	u.keepScore(user,elapsed,percent,subject)
+	u.keepScore(user,subject,timeTaken,percent)

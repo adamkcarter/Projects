@@ -1,26 +1,20 @@
-import user as u
+import database as d
 import MySQLdb
 
+db = d.connect()
+cur = db.cursor()
 
-def insert(name):
-	db = MySQLdb.connect(host='localhost',
-					user = 'root',
-					passwd='root',
-					db = 'mathTutors')
-	
-	cur=db.cursor()
+lookUpStatement = 'SELECT * FROM users'
 
-	insertStatement = 'INSERT INTO users (username) VALUES ("%s")' % (name)
-	print insertStatement
-	usernamess = cur.execute(insertStatement)
-	print name
-	db.commit()
+cur.execute(lookUpStatement)
 
-username = 'camel'
+results = cur.fetchall()
 
-if u.uniqueUser(username):
-	print 'get ready for sign up'
-	u.signUp(username)
-else:
-	print 'sorry that exists'
-#u.uniqueUser('a')
+for i in results:
+	if (i[1]>9):
+		print str(i[1]) + ' ' + str(i[0])
+	else:
+		print str(i[1]) + '  ' + str(i[0])
+
+cur.close()
+db.close()
