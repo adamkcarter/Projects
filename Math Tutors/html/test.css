@@ -1,0 +1,53 @@
+body {
+	background-color:red;
+	height:100%;
+}
+
+#first{
+	background-color:black;
+	width:17.5em;
+	height:200em;
+	margin:0px;
+	padding:0px;
+	float:left;	
+
+}
+
+#second{
+	background-color:green;
+	width:17.5em;
+	height:200em;
+	margin:0px;
+	padding:0px;	
+	float:left;
+
+}
+
+#third{
+	background-color:yellow;
+	width:17.5em;
+	height:200em;
+	margin:0px;
+	padding:0px;
+	float:left;
+
+}
+
+#forth{
+	background-color:orange;
+	width:17.5em;
+	height:200em;
+	margin:0px;
+	padding:0px;	
+	float:left;
+}
+
+#fifth{
+	background-color:blue;
+	width:17.5em;
+	height:200em;
+	margin:0px;
+	padding:0px;
+	float:left;
+
+}

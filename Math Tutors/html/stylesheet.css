@@ -1,0 +1,35 @@
+
+#mainFeature{
+		width:auto;
+		height:1000px;
+		background-color:#BCD2EE;
+		clear:right;
+		padding-top:20px;
+		margin-top:1px;
+}
+
+#mainFeature h1{
+	font-size:5em;
+	font-family:'helvetica',sans-serif;
+	text-align: center;
+}
+
+#nav {
+		background-color:#BCD2E3;
+		float:top;
+		border-bottom:3px gray solid;
+		border-top:3px gray solid;
+}
+
+#nav a{ 
+	color: #5a5a5a;
+	display:inline;
+	font-weight:bold;
+	font-family:'helvetica', sans-serif;
+	text-transform:uppercase;
+
+}
+
+#nav li{
+	display:inline;
+}
