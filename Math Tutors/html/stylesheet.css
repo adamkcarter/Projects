@@ -1,3 +1,6 @@
+body{
+	background-color:#BCD2EE;
+}
 
 #mainFeature{
 		width:auto;
@@ -17,6 +20,7 @@
 #nav {
 		background-color:#BCD2E3;
 		float:top;
+		padding-top:10px;
 		border-bottom:3px gray solid;
 		border-top:3px gray solid;
 }
@@ -32,4 +36,12 @@
 
 #nav li{
 	display:inline;
+}
+
+table {
+	width:400px;
+}
+
+table td:nth-child(2){
+	float:right;
 }

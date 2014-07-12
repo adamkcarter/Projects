@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+		<link type='text/css' rel='stylesheet' href='stylesheet.css'>
+
+	</head>
+
+	<body>
+			<!-- NAV BAR -->
+			<div id='nav'>
+				<div class='container'>
+				<ul class='pull-left'>
+					<li><a href='index.html'>Home</a></li>
+					|
+					<li><a href="#">About Me</a></li> 
+				</ul>
+				<ul class='pull-right'>
+					<li><a href="signIn.html">Log In</a></li>
+					|
+					<li><a href='signUp.html'>Sign Up</a></li> 
+					| 
+					<li><a href="help.html">Help</a></li>
+				</ul>
+				</div>	
+			</div>
+
+			<!-- MAIN FEATURE -->
+			<div id='mainFeature'>
+				<div class='container'>
+					<h1>Sign Up To Practice Math!</h1>
+					
+					<!-- FIRST PICTURE ROW || BOOTSTRAP -->
+					<div class='row'>
+						<div class='col-md-3'>
+							<div class='thumbnail'>
+								<img src='http://mpe.berklee.edu/academics/resources/math.jpg'>
+							</div>
+							<div class='thumbnail'>
+								<img src='http://homepage.smc.edu/nestler_andrew/sums25eq.jpg'>
+							</div>
+						</div>
+							
+						<div class='col-md-6'>
+						<br><br><br><br>
+						<p style='font-size:20px'>Please enter a username and register a password</p>
+							
+							<!-- SIGN UP FORM -->
+							<form name="signIn" class='form-inline' method='post' action='validateSignUp.html'>
+									
+									<table>
+										<tr>
+											<td>
+												<label class-'sr-only' for ='username'>
+													Username
+												</label>
+											</td>
+											<td>
+												<input type='text' name='username' class='form-control' id='username' placeholder='Enter your username'>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<label for='password'>
+													Password       
+												</label>
+											</td>
+											<td>
+												<input type='password' class='form-control' id='password' placeholder='Password'></input>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<label for='password'>
+													Confirm Password
+												</label>
+											</td>
+											<td>
+												<input type='password' class='form-control' id='password2' placeholder='Confirm Password'/>
+											</td>
+										</tr>
+										<tr>
+											<td>
+											</td>
+											<td>
+												<button type='submit' value='send' class='btn btn-default' style='float:right'>
+													Sign Up
+												</button>
+											</td>
+										</tr>
+									</table>
+							</form>
+						</div>
+
+
+						<!-- SECOND PICTURE ROW || BOOTSTRAP -->
+						<div class='col-md-3'>
+							<div class='thumbnail'>
+								<img src='http://www.lcps.org/cms/lib4/VA01000195/Centricity/Domain/11412/math-calculus-diagram-DHD.gif'>
+							</div>
+							<div class='thumbnail'>
+								<img src='http://cache.desktopnexus.com/thumbnails/1413801-bigthumbnail.jpg'>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script>
+			function validate(username, pw1, pw2){
+				if (pw1 == pw2){
+					
+				}
+			}
+		</body>
+
+</html>

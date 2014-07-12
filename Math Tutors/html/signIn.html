@@ -8,6 +8,7 @@
 	</head>
 
 	<body>
+			<!-- NAV BAR -->
 			<div id='nav'>
 				<div class='container'>
 				<ul class='pull-left'>
@@ -20,13 +21,17 @@
 					|
 					<li><a href='signUp.html'>Sign Up</a></li> 
 					| 
-					<li><a href="#">Help</a></li>
+					<li><a href="help.html">Help</a></li>
 				</ul>
 				</div>	
 			</div>
+
+			<!-- MAIN FEATURE -->
 			<div id='mainFeature'>
 				<div class='container'>
 					<h1>Sign In To Practice Math!</h1>
+					
+					<!-- FIRST PICTURE ROW || BOOTSTRAP -->	
 					<div class='row'>
 						<div class='col-md-3'>
 							<div class='thumbnail'>
@@ -36,23 +41,48 @@
 								<img src='http://homepage.smc.edu/nestler_andrew/sums25eq.jpg'>
 							</div>
 						</div>
-							
+
 						<div class='col-md-6'>
 						<br><br><br><br>
+
+						<!-- SIGN IN FORM -->
+						<p style='font-size:20px'>Please enter your name and password to log in.</p>
 							<form name="signIn" class='form-inline' method='post'>
-								<div class='form-group'>
-									<label class-'sr-only' for ='username'>Username</label>
-									<input type='text' name='username' class='form-control' id='username' placeholder='Enter your username'>
-								</div>
-								<div class='form-group'>
-									<label class='sr-only' for='password'>Password</label>
-									<input type='password' class='form-control' id='password' placeholder='Password'>
-								</div>
-								<button type='submit' value='send' class='btn btn-default'>Sign in</button>
+								<table>
+									<tr>
+										<td>
+											<label class-'sr-only' for ='username'>
+												Username
+											</label>
+										</td>
+										<td>
+											<input type='text' name='username' class='form-control' id='username' placeholder='Enter your username'/>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class='sr-only' for='password'>
+												Password
+											</label>
+										</td>
+										<td>
+											<input type='password' class='form-control' id='password' placeholder='Password'/>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										</td>
+										<td>
+											<button type='submit' value='send' class='btn btn-default'>
+												Sign in
+											</button>
+										</td>
+									</tr>
+								</table>
 							</form>
 						</div>
 
-
+						<!-- SECOND PICTURE ROW || BOOTSTRAP -->
 						<div class='col-md-3'>
 							<div class='thumbnail'>
 								<img src='http://www.lcps.org/cms/lib4/VA01000195/Centricity/Domain/11412/math-calculus-diagram-DHD.gif'>

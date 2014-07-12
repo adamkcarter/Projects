@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		My Validate Site
+	</title>
+	<link type='text/css' rel='stylesheet' href='stylesheet.css'>
+
+</head>
+<body>
+	<h1> Validate?</h1>
+	<div id = 'demo'></div>
+
+		<script>
+	function getVars(){
+		var username = document.getElementById('username').value;
+		var password = document.getElementById('password').value;
+	}
+
+	getVars()
+
+	document.getElementById('demo').innerHTML = username + ' ' + password;
+
+	</script>
+</body>
+</html>
