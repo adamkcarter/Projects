@@ -1,0 +1,30 @@
+Data Dictionary
+
+Offence
+
+Team			- Team
+G				- Games Played
+TotPts			- Total Offensive points
+TotYds			- Total Offensive Yards
+TotPly			- Total Offensive Plays
+TotYP 			- Total Yards Per Play
+To 				- Total Turn Overs
+FL				- Fumbles Lost
+1stPy 			- First downs by penalty
+1stD			- First Downs
+PCmp 			- Pass Completions
+PAtt			- Pass Attempts
+PYds			- Passing Yards
+PTD 			- Passing TD's
+PInt 			- Passing INTs
+PNYA 			- Net Yards Gains per pass attempt
+P1stD			- Passing First Downs
+RAtt			- Rushing Attempts
+RYds			- Rushing Yards
+RTD 			- Rushing TDs
+RYA 			- Rushing Yards per Attempt
+R1stD			- First downs by Rushing
+ScPer 			- Percent of drives ending in an offensive score
+TOPer 			- Percentage of drives ending in offensive turnover
+EXP 			- Expected points contributed by all offense
+YR 				- Year
