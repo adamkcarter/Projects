@@ -56,10 +56,29 @@ myPlot <- function(){
 	legend('topright',pch=1,col=pal(6),legend=positons)
 }
 
+
+exportDataFrame <- function(DF, fileName){
+	tracker <- NULL
+	for (i in 1:length(DF[,1])){
+		for (j in 1:length(DF[1,])){
+			if (is.numeric(DF[i,j])){
+				tracker <- c(tracker, round(DF[i,j]),',')
+			} else {
+				tracker <- c(tracker , as.character(DF[i,j]) , ',')
+			}
+		}
+		tracker <- c (tracker, '\n')
+	}
+
+	fileConn <- file(fileName)
+	writeLines(tracker,fileConn, sep='')
+	close(fileConn)
+}
+
 ## Import our files  ### NOW WE HAVE THREE YEARS OF DATA, EACH DRAFT YEAR IS CAPTURES IN A FILE NAMED FOR THAT YEAR
-results2011 <- read.table('2011',sep='\n')
-results2012 <- read.table('2012',sep='\n')
-results2013 <- read.table('2013',sep='\n')
+results2011 <- read.table('2011',sep='\n',strip.white=T)
+results2012 <- read.table('2012',sep='\n',strip.white=T)
+results2013 <- read.table('2013',sep='\n',strip.white=T)
 
 # apply our comb function to said files, this will create three data frames with the draft results for each respective year.
 results2011 <- comb(results2011)
@@ -99,7 +118,7 @@ names(means)<- name
 
 # import player stats data from 2013 **REFER TO yahooScrape.py FOR NEW SEASON DATA (WAS A BITCH LAST YEAR)
 
-data <- read.table('data',sep=',')
+data <- read.table('data',sep=',',strip.white=T)
 
 # split by position
 
@@ -144,6 +163,26 @@ wrData$points <- wrData$points - prototypeWRPoints
 
 prototypedData <- rbind(qbData,rbData,teData,wrData)
 
+qbData <- qbData[order(-qbData$points),]
+rbData <- rbData[order(-rbData$points),]
+teData <- teData[order(-teData$points),]
+wrData <- wrData[order(-wrData$points),]
+
 playerRanking <- prototypedData[order(-prototypedData$points),]
 
 top100Players <- playerRanking[1:100,]
+
+
+
+
+message('Important peices of data
+
+playerRankings : VBD rankings of players based on past three years of draft results 
+qbData : VBD rankings of QBs
+rbData : VBD rankings of RBs
+teData : VBD rankings of TEs
+wrData : VBD rankings of WRs
+
+Important functions
+
+exportDataFrame - DF, filenName : Takes a dataframe and desired fileName, exports a comma seperated file of the data frame')

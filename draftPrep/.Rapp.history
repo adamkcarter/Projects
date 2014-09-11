@@ -1,804 +1,116 @@
-comb <- function(vector){#
-	#make round vector#
-#
-	fin <- NULL#
-#
-	for (i in 1:15){#
-		fin <- c(fin, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	teamPos <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,4,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,3,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+4)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-		}#
-	}#
-#
-	return(cbind(fin,drafted,teamPos,fanTeam)#
-}
-comb <- function(vector){#
-	#make round vector#
-#
-	fin <- NULL#
-#
-	for (i in 1:15){#
-		fin <- c(fin, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	teamPos <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,4,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,3,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+4)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-		}#
-	}#
-#
-	return(cbind(fin,drafted,teamPos,fanTeam))#
-}
-draft <- comb(file)
-draft
-str(draft)
-draft$fin
-draft[1,]
-names(draft)<-c('Round','Selected','TeamPos','FanTeam')
-head(draft_)
-head(draft)
-names(draft)
-draft
-head(draft)
-draft
-head(draft)
-draft$teamPos
-comb <- function(vector){#
-	#make round vector#
-#
-	fin <- NULL#
-#
-	for (i in 1:15){#
-		fin <- c(fin, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	teamPos <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,4,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,3,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+4)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-		}#
-	}#
-#
-	return(data.frame(fin,drafted,teamPos,fanTeam))#
-}
-draft <- comb(file)
-head(draft)
-draft$teamPos
-truth <- draft$fin[<=10]
-topTen<- draft$teamPos[draft$fin<=12]
-topten
-topTen
-topTen[1]
-topTen[2]
-topTen[2,]
-topTen[,2]
-as.character(topTen[2])
-as.vector(topTen)
-as.vector(topTen)[1]
-as.vector(topTen)[1]
-as.vector(topTen)[1:2]
-as.vector(topTen)[1:2]
-as.vector(topTen)[1]comb <- function(vector){#
-	#make round vector#
-#
-	fin <- NULL#
-#
-	for (i in 1:15){#
-		fin <- c(fin, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	teamPos <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,4,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,3,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+4)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-		}#
-	}#
-#
-	return(data.frame(fin,drafted,teamPos,fanTeam))#
-}
-comb <- function(vector){#
-	#make round vector#
-#
-	fin <- NULL#
-#
-	for (i in 1:15){#
-		fin <- c(fin, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	teamPos <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,4,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,3,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+4)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-		}#
-	}#
-#
-	return(data.frame(fin,drafted,teamPos,fanTeam))#
-}
-file
-2013results <- read.table(2013,sep='\n')
-results13 <- read.table(2013,sep='\n')
-2013results <- read.table('2013',sep='\n')
-results2013 <- read.table('2013',sep='\n')
-results2012 <- read.table('2012',sep='\n')
-results2013 <- read.table('2013',sep='\n')
-results2012 <- read.table('2012',sep='\n')
-results2011 <- read.table('2011',sep='\n')
-results2013
-results2013 <- comb(results2013)
-results2013
-results2012 <- comb(results2012)
-results2011 <- comb(results2011)
-results2011
-results2012
-results2012
-results2013 <- read.table('2013',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2011 <- read.table('2011',sep='\n')#
-#
-results2013 <- comb(results2013)#
-results2012 <- comb(results2012)#
-results2011 <- comb(results2011)
-results2011
-results2012
-comb <- function(vector){#
-	#make round vector#
-#
-	fin <- NULL#
-#
-	for (i in 1:15){#
-		fin <- c(fin, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	teamPos <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,4,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+4)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,3,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+4)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-		}#
-	}#
-#
-	return(data.frame(fin,drafted,teamPos,fanTeam))#
-}
-results2013 <- read.table('2013',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2011 <- read.table('2011',sep='\n')#
-#
-results2013 <- comb(results2013)#
-results2012 <- comb(results2012)#
-results2011 <- comb(results2011)
-results2011
-results2012
-comb <- function(vector){#
-	#make round vector#
-#
-	fin <- NULL#
-#
-	for (i in 1:15){#
-		fin <- c(fin, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	teamPos <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,4,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+4)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+5,100)))#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,3,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+4)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+5,100)))#
-		}#
-	}#
-#
-	return(data.frame(fin,drafted,teamPos,fanTeam))#
-}
-results2013 <- read.table('2013',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2011 <- read.table('2011',sep='\n')#
-#
-results2013 <- comb(results2013)#
-results2012 <- comb(results2012)#
-results2011 <- comb(results2011)
-results2011
-results2012
-results2013 <- read.table('2013',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2011 <- read.table('2011',sep='\n')#
-#
-results2013 <- comb(results2013)#
-results2012 <- comb(results2012)#
-results2011 <- comb(results2011)
-results2012
-comb <- function(vector){#
-	#make round vector#
-#
-	fin <- NULL#
-#
-	for (i in 1:15){#
-		fin <- c(fin, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	teamPos <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,4,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,3,minusIndex - 6)))#
-			teamPos <- c(teamPos,(substr(target,minusIndex-5,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-		}#
-	}#
-#
-	return(data.frame(fin,drafted,teamPos,fanTeam))#
-}
-results2013 <- read.table('2013',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2011 <- read.table('2011',sep='\n')#
-#
-results2013 <- comb(results2013)#
-results2012 <- comb(results2012)#
-results2011 <- comb(results2011)
-results2012
-comb <- function(vector){#
-	#make round vector#
-#
-	round <- NULL#
-#
-	for (i in 1:15){#
-		round <- c(round, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	team <- NULL#
-	position <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			offset <- 1#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,(3 + offset),minusIndex - 6)))#
-			team <- c(team,(substr(target,minusIndex-5,minusIndex-1)))#
-			position <- c(position,(substr(target,minusIndex,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			offset <- 0#
-		}#
-	}#
-#
-	return(data.frame(round,drafted,team, position,fanTeam))#
-}
-results2013 <- read.table('2013',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2011 <- read.table('2011',sep='\n')#
-#
-results2013 <- comb(results2013)#
-results2012 <- comb(results2012)#
-results2011 <- comb(results2011)
-comb <- function(vector){#
-	#make round vector#
-#
-	round <- NULL#
-	offset <- 0#
-	for (i in 1:15){#
-		round <- c(round, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	team <- NULL#
-	position <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			offset <- 1#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,(3 + offset),minusIndex - 6)))#
-			team <- c(team,(substr(target,minusIndex-5,minusIndex-1)))#
-			position <- c(position,(substr(target,minusIndex,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			offset <- 0#
-		}#
-	}#
-#
-	return(data.frame(round,drafted,team, position,fanTeam))#
-}
-results2013 <- read.table('2013',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2011 <- read.table('2011',sep='\n')#
-#
-results2013 <- comb(results2013)#
-results2012 <- comb(results2012)#
-results2011 <- comb(results2011)
-results2013
-comb(results2013)
-first <- as.character(results2013[1,])
-first
-second <- as.character(results2013[2,])
-second
-target <- as.character(results2013[2,])
-offset<-0
-minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,(3 + offset),minusIndex - 6)))#
-			team <- c(team,(substr(target,minusIndex-5,minusIndex-1)))#
-			position <- c(position,(substr(target,minusIndex,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))
-drafted <- NULL#
-	team <- NULL#
-	position <- NULL#
-	fanTeam <- NULL
-minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,(3 + offset),minusIndex - 6)))#
-			team <- c(team,(substr(target,minusIndex-5,minusIndex-1)))#
-			position <- c(position,(substr(target,minusIndex,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))
-drafted
-team
-position
-fanTeam
-comb <- function(vector){#
-	#make round vector#
-#
-	round <- NULL#
-	offset <- 0#
-	for (i in 1:15){#
-		round <- c(round, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	team <- NULL#
-	position <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			offset <- 1#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,(3 + offset),minusIndex - 6)))#
-			team <- c(team,(substr(target,minusIndex-5,minusIndex-1)))#
-			position <- c(position,(substr(target,minusIndex+1,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			offset <- 0#
-		}#
-	}#
-#
-	return(data.frame(round,drafted,team, position,fanTeam))#
-}
-drafted <- NULL#
-	team <- NULL#
-	position <- NULL#
-	fanTeam <- NULL
-minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,(3 + offset),minusIndex - 6)))#
-			team <- c(team,(substr(target,minusIndex-5,minusIndex-1)))#
-			position <- c(position,(substr(target,minusIndex+1,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))
-drafted
-team
-position
-fanteam
-fanTeam
-comb(results2013)
-comb <- function(vector){#
-	#make round vector#
-#
-	round <- NULL#
-	offset <- 0#
-	for (i in 1:15){#
-		round <- c(round, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	team <- NULL#
-	position <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			offset <- 1#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,(3 + offset),minusIndex - 6)))#
-			team <- c(team,(substr(target,minusIndex-5,minusIndex-1)))#
-			position <- c(position,(substr(target,minusIndex+1,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			offset <- 0#
-		}#
-	}#
-#
-	return(data.frame(round,#
-		#drafted,team, position,#
-		fanTeam))#
-}
-comb(results2013)
-comb <- function(vector){#
-	#make round vector#
-#
-	round <- NULL#
-	offset <- 0#
-	for (i in 1:15){#
-		round <- c(round, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	team <- NULL#
-	position <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			offset <- 1#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,(3 + offset),minusIndex - 6)))#
-			team <- c(team,(substr(target,minusIndex-5,minusIndex-1)))#
-			position <- c(position,(substr(target,minusIndex+1,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			offset <- 0#
-		}#
-	}#
-#
-	return(#data.frame(round,drafted,team, position,#
-		fanTeam)#
-}
-comb(results2013)
-results2013 <- read.table('2013',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2011 <- read.table('2011',sep='\n')#
-#
-results2013 <- comb(results2013)#
-results2012 <- comb(results2012)#
-results2011 <- comb(results2011)
-results2013
-results2012
-results2011
-comb <- function(vector){#
-	#make round vector#
-#
-	round <- NULL#
-	offset <- 0#
-	for (i in 1:15){#
-		round <- c(round, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	team <- NULL#
-	position <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			offset <- 1#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,(3 + offset),minusIndex - 6)))#
-			team <- c(team,(substr(target,minusIndex-5,minusIndex-1)))#
-			position <- c(position,(substr(target,minusIndex+1,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			offset <- 0#
-		}#
-	}#
-#
-	return(#data.frame(round,drafted,team, #
-		position)#
-		#,fanTeam)#
-}
-results2013 <- read.table('2013',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2011 <- read.table('2011',sep='\n')#
-#
-results2013 <- comb(results2013)#
-results2012 <- comb(results2012)#
-results2011 <- comb(results2011)
-results2011
-length(results2011)
-comb <- function(vector){#
-	#make round vector#
-#
-	round <- NULL#
-	offset <- 0#
-	for (i in 1:15){#
-		round <- c(round, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	team <- NULL#
-	position <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else if (i%%11 == 0){#
-			offset <- 1#
-			}else{#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,(3 + offset),minusIndex - 6)))#
-			team <- c(team,(substr(target,minusIndex-5,minusIndex-1)))#
-			position <- c(position,(substr(target,minusIndex+1,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			offset <- 0#
-		}#
-	}#
-#
-	print (length(round))#
-	print (length(drafted))#
-	print (length(team))#
-	print (length(position))#
-	print (length(fanTeam))#
-	#return(data.frame(round,drafted,team, position,fanTeam))#
-}
-results2013 <- read.table('2013',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2011 <- read.table('2011',sep='\n')#
-#
-results2013 <- comb(results2013)#
-results2012 <- comb(results2012)#
-results2011 <- comb(results2011)
-comb <- function(vector){#
-	#make round vector#
-#
-	round <- NULL#
-	offset <- 0#
-	for (i in 1:15){#
-		round <- c(round, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	team <- NULL#
-	position <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else {#
-			if (i%%11 == 0){#
-				offset <- 1#
+exportDataFrame(qbData,'qbData.txt')
+exportDataFrame <- function(DF, fileName){#
+	tracker <- NULL#
+	for (i in 1:length(DF[,1])){#
+		for (j in 1:length(DF[1,])){#
+			if (is.numeric(DF[i,j])){#
+				tracker <- c(tracker, round(DF[i,j]),',')#
+			} else {#
+				tracker <- c(tracker , as.character(DF[i,j]) , ',')#
 			}#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,(3 + offset),minusIndex - 6)))#
-			team <- c(team,(substr(target,minusIndex-5,minusIndex-1)))#
-			position <- c(position,(substr(target,minusIndex+1,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			offset <- 0#
 		}#
+		tracker <- c (tracker, '\n')#
 	}#
 #
-	print (length(round))#
-	print (length(drafted))#
-	print (length(team))#
-	print (length(position))#
-	print (length(fanTeam))#
-	#return(data.frame(round,drafted,team, position,fanTeam))#
+	fileConn <- file(fileName)#
+	writeLines(tracker,fileConn, sep='')#
+	close(fileConn)#
 }
-results2013 <- read.table('2013',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2011 <- read.table('2011',sep='\n')#
+exportDataFrame(rbData,'rbData.txt')
+exportDataFrame(teData,'teData.txt')
+exportDataFrame(wrData,'wrData.txt')
+ESPN <- read.table('ESPNPlayerRankings',sep='\n')
+ESPN <- read.table('ESPNPlayerRankings',sep='\n')
+espn
+ESPN
+ESPN <- read.table('ESPNPlayerRankings',sep=','')
+''
+ESPN <- read.table('ESPNPlayerRankings',sep=',')
+ESPON
+ESPN
+ESPN <- read.table('ESPNPlayerRankings',sep=',')
+ESPN
+ESPN <- ESPN[-order(ESPN$V1)]
+ESPN
+ESPN
+ESPN <- read.table('ESPNPlayerRankings',sep=',')
+ESPN[-order(ESPN$V1)]
+order(ESPN$V1)
+ESPN <- read.table('ESPNPlayerRankings',sep=',')
+-order(ESPN$V1)
+order(ESPN$V1)
+ESPN[order(ESPN$V1)]
+ESPN[order(-ESPN$V1),]
+ESPN[order(ESPN$V1),]
+ESPN <- ESPN[order(ESPN$V1),]
+exportDataFrame(ESPN,'espnRanking.txt')
+name <- 'Adrian Peterson'
+ESPN[1]
+ESPN[1,]
+name
+name %in% ESPN$V2
+name in ESPN$V2
+name in ESPN$V2[1]
+name %in% ESPN$V2[1]
+ESPN$V2[1]
+ESPN$V2[[1]]
+name %in% as.character(ESPN$V2)
+name %in% as.character(ESPN$V2[1])
+as.character(ESPN$V2[1])
+name <- ' Adrian Peterson'
+name %in% as.character(ESPN$V2[1])
+grep(name,ESPN$V2)
+wrong <- 'Pimp'
+grep(wrong,ESPN$V2)
+grep('Denver',ESPN$V2)
+grep('Denvers',ESPN$V2)
+qbData
+qrbData
+rbData
+rankings
+ranking
+playerRanking
+grep(name,playerRanking)
+grep(name,playerRanking$player)
+name<-'Adrian Peterson'
+grep(name,playerRanking$player)
+playerRanking$pos[grep(name,playerRanking$player)]
+playerRanking
+length(playerRanking[,1])
+playerRanking[1]
+playerRanking[1,]
+playerRanking$player[1]
+playerRanking$player[][1]]
+playerRanking$player[[1]]
+as.character(playerRanking$player[1])
+holder <- NULL#
 #
-results2013 <- comb(results2013)#
-results2012 <- comb(results2012)#
-results2011 <- comb(results2011)
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN,T)#
+	if (is.null(holder)){#
+		holder <- c(index,as.character(playerRanking$pos[i]))#
+	} else {#
+		holder <- rbind(holder, c(index, as.character(playerRanking$pos[i])))#
+	}#
+}
+holder
+name <- as.character(playerRanking$player)
+name <- as.character(playerRanking$player[1])
+grep(name,ESPN,T)
+grep(name,ESPN)
+name
+ESPN
+grep(name,ESPN$V2)
+grep(name,ESPN$V3)
+grep(name,ESPN$V2)
+ESPN <- read.table('ESPNPlayerRankings',sep=',',strip.white=T)
+ESPN
+ESPN$player
+ESPN$V2
+grep(name,ESPN$V2)
+name
 comb <- function(vector){#
-	#make round vector#
-#
-	round <- NULL#
-	offset <- 0#
-	for (i in 1:15){#
-		round <- c(round, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	team <- NULL#
-	position <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else {#
-			if (i%%11 == 0){#
-				offset <- 1#
-			}#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,(3 + offset),minusIndex - 6)))#
-			team <- c(team,(substr(target,minusIndex-5,minusIndex-1)))#
-			position <- c(position,(substr(target,minusIndex+1,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			offset <- 0#
-		}#
-	}#
-#
-	'print (length(round))#
-	print (length(drafted))#
-	print (length(team))#
-	print (length(position))#
-	print (length(fanTeam))'#
-	return(data.frame(round,drafted,team, position,fanTeam))#
-}
-results2013 <- read.table('2013',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2011 <- read.table('2011',sep='\n')#
-#
-results2013 <- comb(results2013)#
-results2012 <- comb(results2012)#
-results2011 <- comb(results2011)
-results2013
-first120 <- function(dataframe){#
-	return(dataframe[dataframe$round<12])#
-}
-first120(results2011)
-results2011
-results2011<-results2011[results2011$round<12]
-results2011$round
-results2011$round<12
-results2011<-results2011[results2011$round<12,]
-results2011
-first120 <- function(dataframe){#
-	return(dataframe[dataframe$round<=12,])#
-}
-print(first120(results2012))
-str(results2012)
-table(first120(results2012))
-table(first120(results2012)$position)
-first100 <- function(dataframe){#
-	return(dataframe[dataframe$round<=10,])#
-}
-table(first100(results2012)$position)
-table(first100(results2013)$position)
-breakdown2013 <- table(first100(results2013)$position)
-breakdown2013
-str(breakdown2013)
-breakdown2012 <- table(first100(results2012)$position)
-breakdown2011 <- table(first100(results2011)$position)
-rbind(breakdown2011,breakdown2012,breakdown2013)
-str(breakdown2013)comb <- function(vector){#
 	#make round vector#
 #
 	round <- NULL#
@@ -841,10 +153,38 @@ str(breakdown2013)comb <- function(vector){#
 first100 <- function(dataframe){#
 	return(dataframe[dataframe$round<=10,])#
 }#
-## Import our files#
-results2011 <- read.table('2011',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2013 <- read.table('2013',sep='\n')#
+myPlot <- function(){#
+	plot(years,complete[,1],type='l',col=pal(6)[1], xaxt='n',ylim=c(0,50))#
+	axis(1, at=2011:2013,labels=c('2011','2012','2013'))#
+	lines(years, y=complete[,2],col=pal(6)[2])#
+	lines(years, y=complete[,3],col=pal(6)[3])#
+	lines(years, y=complete[,4],col=pal(6)[4])#
+	lines(years, y=complete[,5],col=pal(6)[5])#
+	lines(years, y=complete[,6],col=pal(6)[6])#
+	legend('topright',pch=1,col=pal(6),legend=positons)#
+}#
+exportDataFrame <- function(DF, fileName){#
+	tracker <- NULL#
+	for (i in 1:length(DF[,1])){#
+		for (j in 1:length(DF[1,])){#
+			if (is.numeric(DF[i,j])){#
+				tracker <- c(tracker, round(DF[i,j]),',')#
+			} else {#
+				tracker <- c(tracker , as.character(DF[i,j]) , ',')#
+			}#
+		}#
+		tracker <- c (tracker, '\n')#
+	}#
+#
+	fileConn <- file(fileName)#
+	writeLines(tracker,fileConn, sep='')#
+	close(fileConn)#
+}#
+#
+## Import our files  ### NOW WE HAVE THREE YEARS OF DATA, EACH DRAFT YEAR IS CAPTURES IN A FILE NAMED FOR THAT YEAR#
+results2011 <- read.table('2011',sep='\n',strip.white=T)#
+results2012 <- read.table('2012',sep='\n',strip.white=T)#
+results2013 <- read.table('2013',sep='\n',strip.white=T)#
 #
 # apply our comb function to said files, this will create three data frames with the draft results for each respective year.#
 results2011 <- comb(results2011)#
@@ -865,85 +205,6 @@ breakdown2013 <- table(best2013$position)#
 #
 # Combine breakdowns#
 #
-rbind(breakdown2011, breakdown2012, breakdown2013)
-comb <- function(vector){#
-	#make round vector#
-#
-	round <- NULL#
-	offset <- 0#
-	for (i in 1:15){#
-		round <- c(round, rep(i,10))#
-	}#
-#
-	#FIND DRAFT RESULTS#
-	drafted <- NULL#
-	team <- NULL#
-	position <- NULL#
-	fanTeam <- NULL#
-	for (i in 1:length(vector[,])){#
-		#Grab our target#
-		target <- as.character(vector[i,])#
-		#Check to see if this is a round marker#
-		if (nchar(target) <= 8){#
-		} else {#
-			if (i%%11 == 0){#
-				offset <- 1#
-			}#
-			minusIndex <- regexpr('-',target)[1]#
-			drafted <- c(drafted,(substr(target,(3 + offset),minusIndex - 6)))#
-			team <- c(team,(substr(target,minusIndex-5,minusIndex-1)))#
-			position <- c(position,(substr(target,minusIndex+1,minusIndex+5)))#
-			fanTeam <- c(fanTeam,(substr(target,minusIndex+6,100)))#
-			offset <- 0#
-		}#
-	}#
-#
-	'print (length(round))#
-	print (length(drafted))#
-	print (length(team))#
-	print (length(position))#
-	print (length(fanTeam))'#
-	return(data.frame(round,drafted,team, position,fanTeam))#
-}#
-#
-first100 <- function(dataframe){#
-	return(dataframe[dataframe$round<=10,])#
-}
-results2011 <- read.table('2011',sep='\n')#
-results2012 <- read.table('2012',sep='\n')#
-results2013 <- read.table('2013',sep='\n')
-results2011 <- comb(results2011)#
-results2012 <- comb(results2012)#
-results2013 <- comb(results2013)
-best2011 <- first100(results2011)#
-best2012 <- first100(results2012)#
-best2013 <- first100(results2013)
-breakdown2011 <- table(best2011$position)#
-breakdown2012 <- table(best2012$position)#
-breakdown2013 <- table(best2013$position)
-rbind(breakdown2011, breakdown2012, breakdown2013)
-total <- rbind(breakdown2011, breakdown2012, breakdown2013)
-total$breakdown2011
-total$[1,]
-total[1,]
-total[,1]
-meanDef = mean(total[,1])
-meanDef
-length(total)
-length(total[1,])
-names(total[1,])
-complete <- rbind(breakdown2011, breakdown2012, breakdown2013)#
-#
-# Find mean of all three years#
-name <- names(complete[1,])#
-means <- NULL#
-for (i in 1:length(complete[1,])){#
-	means <- c(means, mean(complete[,i]))#
-}
-means
-names(means)<-name
-means
-?round
 complete <- rbind(breakdown2011, breakdown2012, breakdown2013)#
 #
 # Find mean of all three years#
@@ -951,169 +212,486 @@ name <- names(complete[1,])#
 means <- NULL#
 for (i in 1:length(complete[1,])){#
 	means <- c(means, round(mean(complete[,i]),0))#
-}
-means
-# Find mean of all three years#
-name <- names(complete[1,])#
-means <- NULL#
+}#
 names(means)<- name#
-for (i in 1:length(complete[1,])){#
-	means <- c(means, round(mean(complete[,i]),0))#
+#
+############          MEAN OUTPUT           ################
+###												   		####
+###	  1. DEF  2. K  3. QB   4. RB   5. TE    6. WR   	####
+###    	  1     1     22       34      9       33 		###	#
+###														####
+########################################################### #
+#
+# import player stats data from 2013 **REFER TO yahooScrape.py FOR NEW SEASON DATA (WAS A BITCH LAST YEAR)#
+#
+data <- read.table('data',sep=',',strip.white=T)#
+#
+# split by position#
+#
+############ SPLIT DATA INDEX CHART ################
+###												####
+###					1 --- QB 					####
+### 				2 --- RB 					####
+### 				3 --- TE 					####
+### 				4 --- WR					###	#
+###												####
+################################################### #
+splitData <- split(data,data$V3)#
+#
+splitNames <- c ('player','team','pos','points')#
+#
+qbData <- data.frame(splitData[1])#
+colnames(qbData) <- splitNames#
+#
+rbData <- data.frame(splitData[2])#
+colnames(rbData) <- splitNames#
+#
+teData <- data.frame(splitData[3])#
+colnames(teData) <- splitNames#
+#
+wrData <- data.frame(splitData[4])#
+colnames(wrData) <- splitNames#
+#
+prototypeQB <- qbData[22,]#
+prototypeRB <- rbData[34,]#
+prototypeTE <- teData[9,]#
+prototypeWR <- wrData[32,]#
+#
+prototypeQBPoints <- prototypeQB$points#
+prototypeRBPoints <- prototypeRB$points#
+prototypeTEPoints <- prototypeTE$points#
+prototypeWRPoints <- prototypeWR$points#
+#
+qbData$points <- qbData$points - prototypeQBPoints#
+rbData$points <- rbData$points - prototypeRBPoints#
+teData$points <- teData$points - prototypeTEPoints#
+wrData$points <- wrData$points - prototypeWRPoints#
+#
+prototypedData <- rbind(qbData,rbData,teData,wrData)#
+#
+qbData <- qbData[order(-qbData$points),]#
+rbData <- rbData[order(-rbData$points),]#
+teData <- teData[order(-teData$points),]#
+wrData <- wrData[order(-wrData$points),]#
+#
+playerRanking <- prototypedData[order(-prototypedData$points),]#
+#
+top100Players <- playerRanking[1:100,]
+grep(name,ESPN$V2)
+name
+ESPN$V2
+name <- as.character(playerRanking$player[1])
+name
+grep(name,ESPN$V2)
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN,T)#
+	if (is.null(holder)){#
+		holder <- c(index,as.character(playerRanking$pos[i]))#
+	} else {#
+		holder <- rbind(holder, c(index, as.character(playerRanking$pos[i])))#
+	}#
 }
-name <- names(complete[1,])#
-means <- NULL#
-for (i in 1:length(complete[1,])){#
-	means <- c(means, round(mean(complete[,i]),0))#
-}#
-names(means)<- name
-means
-means['QB']
-means[1]
-means[2]
-means[][2]]
-means[[2]]
-means[2]
-complete
-plot(complete)
-hist(complete)
-plot(complete[1,])
-plot(complete[1,],type='l')
-lines(complete[2,])
-plot(complete[1,],type='l')
-plot(complete[1,],type='l',col='r')
-plot(complete[1,],type='l',col='re')
-plot(complete[1,],type='l',col='red')
-lines(complete[2,],col='blue')
-lines(complete[3,],col='green')
-plot(means,type='l')
-ylabs<-'hello'
-positons <- c('DEF','K','QB','RB','TE','WR'_)
-positons <- c('DEF','K','QB','RB','TE','WR')
-plot(positions,means,type='l')
-plot(positons,means,type='l')
-positons
-c(positons,complete[1,]
-)
-plot(complete[,1])
-plot(complete[1,])
-text(labels=positons)
-text(complete[1,],labels=positons)
-plot(complete[1,], labels=positons)
-plot(complete[1,], label=positons)
-plot(complete[1,], xaxt='n')
-axis (1,at=1:6,label=positons)
-?xaxt
-?plot
-plot(complete[1,], xaxt='n',type='l')
-plot(complete[1,], xaxt='n',type='l',col='red')
-axis (1,at=1:6,label=positons)
-lines(complete[2,],col='blue')
-lines(complete[3,],col='green')
-legend
-legend(positons,complete[1,])
-legend(positons,complete[1,],legend='topright')
-legend(positons,complete[1,],legend='bottom')
-legend('topright',legend='bottom')
-legend('topright',legend=)
-legend('topright',legend=c('2011,'2012','2013))
-legend('topright',legend=c('2011,'2012','2013'))
-legend('topright',legend=c(2011,2012,2013))
-complete
-years <- c(2011,2012,2013)
-plot(years,complete[,1])
-plot(years,complete[,1],type='l',col='red')
-lines(complete[,2],col='blue')
-lines(complete[,2],col='blue')
-?lines
-lines(years, y=complete[,2],col='blue')
-?plot
-plot(years,complete[,1],type='l',col='red', xlim=c(2011,2013),ylim=c(0,40))
-lines(years, y=complete[,2],col='blue')
-library(RColorBrewer)#
+holderr
+holder
+name <- as.character(playerRanking$player[3])
+grep(name,ESPN$V2)
+index <- grep(name,ESPN$V2)
+index
+index <- grep(name,ESPN$V2, T)
+index
+c(index,name)
+index2 <- grep('Adrian',ESPN$V2, T)
+c(index,name)
+one <- c(index,name)
+two <- c(index2,'Adrian')
+rbind(one,two)
+for (i in 1:2){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN,T)#
+	if (is.null(holder)){#
+		holder <- c(index,as.character(playerRanking$pos[i]))#
+	} else {#
+		holder <- rbind(holder, c(index, as.character(playerRanking$pos[i])))#
+	}#
+}
+holder
+holder<-NULL
+for (i in 1:2){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN,T)#
+	if (is.null(holder)){#
+		holder <- c(index,as.character(playerRanking$pos[i]))#
+	} else {#
+		holder <- rbind(holder, c(index, as.character(playerRanking$pos[i])))#
+	}#
+}
+holder
+name <- as.character(playerRanking$player[1])
+name
+index <- grep(name,ESPN,T)
+index
+holder <- NULL#
 #
-cols <- brewer.pal(6,'Spectral')#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[2,],T)#
+	if (is.null(holder)){#
+		holder <- c(index,as.character(playerRanking$pos[i]))#
+	} else {#
+		holder <- rbind(holder, c(index, as.character(playerRanking$pos[i])))#
+	}#
+}
+holder
+ESPN[2,]
+ESPN[,2]
+holder <- NULL#
 #
-# Create a virtual palette from our chose colours#
-pal <- colorRampPalette(cols)
-pal(6)
-plot(years,complete[,1],type='l',col=pal(6)[1], xlim=c(2011,2013),ylim=c(0,40))
-lines(years, y=complete[,2],col=pal(6)[2])
-lines(years, y=complete[,3],col=pal(6)[3])
-lines(years, y=complete[,4],col=pal(6)[4])
-lines(years, y=complete[,5],col=pal(6)[5])
-lines(years, y=complete[,6],col=pal(6)[6])
-legend(years,positons)
-legend('topright',pch=1,col=pal(6),legend=positons)
-plot(years,complete[,1],type='l',col=pal(6)[1], xlim=c(2011,2013),ylim=c(0,40))#
-lines(years, y=complete[,2],col=pal(6)[2])#
-lines(years, y=complete[,3],col=pal(6)[3])#
-lines(years, y=complete[,4],col=pal(6)[4])#
-lines(years, y=complete[,5],col=pal(6)[5])#
-lines(years, y=complete[,6],col=pal(6)[6])
-6plot(years,complete[,1],type='l',col=pal(6)[1], xlim=c(2011,2013),ylim=c(0,60))#
-lines(years, y=complete[,2],col=pal(6)[2])#
-lines(years, y=complete[,3],col=pal(6)[3])#
-lines(years, y=complete[,4],col=pal(6)[4])#
-lines(years, y=complete[,5],col=pal(6)[5])#
-lines(years, y=complete[,6],col=pal(6)[6])
-plot(years,complete[,1],type='l',col=pal(6)[1], xlim=c(2011,2013),ylim=c(0,60))#
-lines(years, y=complete[,2],col=pal(6)[2])#
-lines(years, y=complete[,3],col=pal(6)[3])#
-lines(years, y=complete[,4],col=pal(6)[4])#
-lines(years, y=complete[,5],col=pal(6)[5])#
-lines(years, y=complete[,6],col=pal(6)[6])
-plot(years,complete[,1],type='l',col=pal(6)[1], xlim=c(2011,2013),ylim=c(0,50))#
-lines(years, y=complete[,2],col=pal(6)[2])#
-lines(years, y=complete[,3],col=pal(6)[3])#
-lines(years, y=complete[,4],col=pal(6)[4])#
-lines(years, y=complete[,5],col=pal(6)[5])#
-lines(years, y=complete[,6],col=pal(6)[6])
-legend('topright',pch=1,col=pal(6),legend=positons)
-plot(years,complete[,1],type='l',col=pal(6)[1], xlim=c(2011,2012,2013),ylim=c(0,50))#
-lines(years, y=complete[,2],col=pal(6)[2])#
-lines(years, y=complete[,3],col=pal(6)[3])#
-lines(years, y=complete[,4],col=pal(6)[4])#
-lines(years, y=complete[,5],col=pal(6)[5])#
-lines(years, y=complete[,6],col=pal(6)[6])
-plot(years,complete[,1],type='l',col=pal(6)[1], xlim=c('2011','2013'),ylim=c(0,50))#
-lines(years, y=complete[,2],col=pal(6)[2])#
-lines(years, y=complete[,3],col=pal(6)[3])#
-lines(years, y=complete[,4],col=pal(6)[4])#
-lines(years, y=complete[,5],col=pal(6)[5])#
-lines(years, y=complete[,6],col=pal(6)[6])
-plot(years,complete[,1],type='l',col=pal(6)[1], xaxt='n;,ylim=c(0,50))#
-axis(1, at=1:3,labels=c('2011','2012','2013'))#
-lines(years, y=complete[,2],col=pal(6)[2])#
-lines(years, y=complete[,3],col=pal(6)[3])#
-lines(years, y=complete[,4],col=pal(6)[4])#
-lines(years, y=complete[,5],col=pal(6)[5])#
-lines(years, y=complete[,6],col=pal(6)[6])
-plot(years,complete[,1],type='l',col=pal(6)[1], xaxt='n',ylim=c(0,50))#
-axis(1, at=1:3,labels=c('2011','2012','2013'))#
-lines(years, y=complete[,2],col=pal(6)[2])#
-lines(years, y=complete[,3],col=pal(6)[3])#
-lines(years, y=complete[,4],col=pal(6)[4])#
-lines(years, y=complete[,5],col=pal(6)[5])#
-lines(years, y=complete[,6],col=pal(6)[6])
-plot(years,complete[,1],type='l',col=pal(6)[1], xaxt='n',ylim=c(0,50))#
-axis(1, at=2011:2013,labels=c('2011','2012','2013'))#
-lines(years, y=complete[,2],col=pal(6)[2])#
-lines(years, y=complete[,3],col=pal(6)[3])#
-lines(years, y=complete[,4],col=pal(6)[4])#
-lines(years, y=complete[,5],col=pal(6)[5])#
-lines(years, y=complete[,6],col=pal(6)[6])
-legend('topright',pch=1,col=pal(6),legend=positons)
-plot(years,complete[,1],type='l',col=pal(6)[1], xaxt='n',ylim=c(0,50))#
-axis(2, at=0:3,labels=c('2011','2012','2013'))#
-lines(years, y=complete[,2],col=pal(6)[2])#
-lines(years, y=complete[,3],col=pal(6)[3])#
-lines(years, y=complete[,4],col=pal(6)[4])#
-lines(years, y=complete[,5],col=pal(6)[5])#
-lines(years, y=complete[,6],col=pal(6)[6])
-plot(years,complete[,1],type='l',col=pal(6)[1], xaxt='n',ylim=c(0,50))#
-axis(1, at=2011:2013,labels=c('2011','2012','2013'))#
-lines(years, y=complete[,2],col=pal(6)[2])#
-lines(years, y=complete[,3],col=pal(6)[3])#
-lines(years, y=complete[,4],col=pal(6)[4])#
-lines(years, y=complete[,5],col=pal(6)[5])#
-lines(years, y=complete[,6],col=pal(6)[6])
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.null(holder)){#
+		holder <- c(index,as.character(playerRanking$pos[i]))#
+	} else {#
+		holder <- rbind(holder, c(index, as.character(playerRanking$pos[i])))#
+	}#
+}
+holder
+order(holder)
+order(holder[1,])
+order(holder[,1])
+holder[order(holder[,1])]
+holder[,1]
+holder[,1] <- as.numeric(holder[,1])
+holderr
+holdr
+holder
+head(holder)
+order(holder[1,])
+order(holder[,1)
+order(holder[,1])
+holder[order(holder[,1])]
+holder[order(as.numeric(holder[,1]))]
+playerRanking[12]
+playerRanking[12,]
+playerRanking$player[12]
+as.character(playerRanking$player[12])
+nameTest <- as.character(playerRanking$player[12])
+grep(nameTest,ESPN)
+grep(nameTest,ESPN[,2])
+grep('Doug Martin',ESPN[,2],T)
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.null(holder)){#
+		holder <- c(index, name , as.character(playerRanking$pos[i]))#
+	} else {#
+		holder <- rbind(holder, c(index, name,  as.character(playerRanking$pos[i])))#
+	}#
+}
+holder
+head(holder)
+holder
+grep('pimp',ESPN)
+is.null(grep('pimp',ESPN))
+is.null(grep('adrian',ESPN))
+is.null(grep('Adrian',ESPN))
+grep('Adrian',ESPN)
+grep('Adrian',ESPN,T)
+grep('Adrian',ESPN[,2],T)
+grep('Adrian',ESPN[,2],T)
+grep('Adrian',ESPN[,2],T)
+is.numeric(grep('Adrian',ESPN[,2],T))
+is.numeric(grep('Adriansss',ESPN[,2],T))
+grep('Adriansss',ESPN[,2],T)
+grep('Adriansss',ESPN[,2],T) == 0
+if (grep('Adriansss',ESPN[,2],T) == 0) {message(Hello)}
+if (grep('Adriansss',ESPN[,2],T) == 0) {message('Hello')}
+grep('Adriansss',ESPN[,2],T)
+as.numeric(grep('Adriansss',ESPN[,2],T))
+as.numeric(grep('Adriansss',ESPN[,2],T)) == 0
+grep('Adriansss',ESPN[,2],T))
+grep('Adriansss',ESPN[,2],T)
+?grep
+if(grep('Adriansss',ESPN[,2],T)){message('Hello')}else{message()
+]
+if(grep('Adriansss',ESPN[,2],T)){message('Hello')}else{message('no')}
+if(0){message('l')}else{message('3')
+}
+?grep
+grep('Adriansss',ESPN[,2],T)
+grep('Adriansss',ESPN[,2],T)[1]
+grep('Adrian',ESPN[,2],T)[1]
+is.na(grep('Adrian',ESPN[,2],T)[1])
+is.na(grep('Adrianss',ESPN[,2],T)[1])
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(index, name , as.character(playerRanking$pos[i]))#
+	} else {#
+		holder <- rbind(holder, c(index, name,  as.character(playerRanking$pos[i])))#
+	}#
+}
+holder
+grep('Green',playerRanking)
+grep('Green',playerRanking,T)
+grep('AJ',playerRanking,T)
+grep('Green',playerRanking,T)
+playerRanking
+wrData
+grep('Green',playerRanking$player,T)
+grep('AJ Green',playerRanking$player,T)
+grep('A.J. Green',playerRanking$player,T)
+ESPN <- read.table('ESPNPlayerRankings,sep=')
+ESPN <- read.table('ESPNPlayerRankings,sep=',',strip.white=T)
+''
+'
+ESPN <- read.table('ESPNPlayerRankings',sep=',',strip.white=T)
+ESPN
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(index, name , as.character(playerRanking$pos[i]))#
+	} else {#
+		holder <- rbind(holder, c(index, name,  as.character(playerRanking$pos[i])))#
+	}#
+}
+holder
+holder <- holder[order(as.numeric(holder[,1])]
+holder <- holder[order(as.numeric(holder[,1]))]
+holder
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(index, name , as.character(playerRanking$pos[i]))#
+	} else {#
+		holder <- rbind(holder, c(index, name,  as.character(playerRanking$pos[i])))#
+	}#
+}
+holder
+playerRankings
+playerRanking
+holder
+order(as.numeric(holder))
+length(holder[1,])
+length(holder[,1])
+holder[order(as.numeric(holder))]
+order(as.numeric(holder[1,]))
+order(as.numeric(holder[,1]))
+holder[order(as.numeric(holder[,1]))]
+holder[order(as.numeric(holder[,1])),]
+ESPN
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , as.character(playerRanking$pos[i]))#
+	} else {#
+		holder <- rbind(holder, c(ESPN$V1[index], name,  as.character(playerRanking$pos[i])))#
+	}#
+}
+holder
+ESPN
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , ESPN$V2(index))#
+	} else {#
+		holder <- rbind(holder, c(ESPN$V1[index], name,  ESPN$V2(index))#
+	}#
+}
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , ESPN$V2(index))#
+	} else {#
+		holder <- rbind(holder, c(ESPN$V1[index], name,  ESPN$V2(index))#
+	}#
+}
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , ESPN$V2(index))#
+	} else {#
+		holder <- rbind(holder, c(ESPN$V1[index], name,  ESPN$V2[index])#
+	}#
+}
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , ESPN$V2[index])#
+	} else {#
+		holder <- rbind(holder, c(ESPN$V1[index], name,  ESPN$V2[index])#
+	}#
+}
+ESPN$V2
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	#if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , ESPN$V2[index])#
+	} else { #
+		holder <- rbind(holder, c(ESPN$V1[index], name,  ESPN$V2[index])#
+	}
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	#if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , ESPN$V2[index])#
+	} else { #
+		holder <- rbind(holder, c(ESPN$V1[index], name,  ESPN$V2[index])
+}
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	#if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , ESPN$V2[index])#
+	} else { #
+		holder <- rbind(holder, c(ESPN$V1[index], name,  ESPN$V2[index])
+}
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	#if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , ESPN$V2[index])#
+	} else { #
+		holder <- rbind(holder, c(ESPN$V1[index], name,  ESPN$V2[index]))#
+	}#
+}
+holder
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , ESPN$V2[index])#
+	} else { #
+		holder <- rbind(holder, c(ESPN$V1[index], name,  ESPN$V2[index]))#
+	}#
+}
+holder
+ESPN$V2[30]
+ESPN$V2[[30]]
+ESPN$V2[30,]
+ESPN$V2[,30]
+ESPN$V2[30]
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , ESPN$V2[index])#
+	} else { #
+		holder <- rbind(holder, c(ESPN$V1[index], name, as.character(playerRanking$pos[i])#
+	}#
+}
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , ESPN$V2[index])#
+	} else { #
+		holder <- rbind(holder, c(ESPN$V1[index], name, as.character(playerRanking$pos[i])))#
+	}#
+}
+holder
+ESPN <- read.table('ESPNPlayerRankings',sep=',',strip.white=T)
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , ESPN$V2[index])#
+	} else { #
+		holder <- rbind(holder, c(ESPN$V1[index], name, as.character(playerRanking$pos[i])#
+	}#
+}
+holder <- NULL#
+#
+for (i in 1:length(playerRanking[,1])){#
+	name <- as.character(playerRanking$player[i])#
+	index <- grep(name,ESPN[,2],T)#
+	if (is.na(index[1])){index<-'not found'}#
+#
+	if (is.null(holder)){#
+		holder <- c(ESPN$V1[index], name , ESPN$V2[index])#
+	} else { #
+		holder <- rbind(holder, c(ESPN$V1[index], name, as.character(playerRanking$pos[i])))#
+	}#
+}
+holder
+holder <- holder[order(as.numeric(holder[,1])),]
+holder
+exportDataFrame(holder,'ESPN.txt')
